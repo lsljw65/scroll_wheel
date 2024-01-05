@@ -44,9 +44,11 @@ header, section, footer{
 section{
     background:white;
     position:sticky;
-    top:0;
+    /* 수정 */
+    top:70px;
     height:1024px;
-    padding-top:100px;
+    /* 수정 */
+    padding-top:0;
 }
 /* 헤더 */
 header{
@@ -127,8 +129,8 @@ header{
     font-size:50px;
     color:white;
     text-shadow:2px 2px 0px black;
-    
-
+    /* 수정 */
+    margin-bottom:20px;
 }
 .about-container{
     width:90%;
@@ -139,7 +141,6 @@ header{
     position:relative;
     /* padding-bottom:150px; */
 }
-
 
 #web{
     /* background:#ccc; */
@@ -165,12 +166,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    transform:translate(0, 50px)
 }
 #banner-detail{
     /* background:#bbb; */
     background:url(../images/m-r2.jpg) no-repeat center fixed;
     background-size:cover;
-    padding-top:100px ;
+    /* 수정 */
+    /* padding-top:100px ; */
 }
 /* #banner-detail .s-title{
     width:100%;
@@ -189,6 +192,11 @@ header{
     display:flex;
     justify-content: center;
     border-bottom:2px solid #ccc;
+    -ms-overflow-style: none;
+    scrollbar-width:none
+}
+.banner-detail-container::-webkit-scrollbar{
+    display:none;
 }
 .box-wrap{
     position:absolute;
@@ -196,7 +204,7 @@ header{
     height:auto;
     display:flex;
     justify-content: space-between;
-    flex-wrap:wrap
+    flex-wrap:wrap;
 }
 .b-d-box{
     width:100%;
@@ -223,8 +231,21 @@ header{
     background:#ddd;
 }
 
-
-
+#about .s-title{
+    background:rgb(178, 235, 238);
+}
+#web .s-title{
+    background:rgb(171, 179, 235);
+}
+#banner-detail .s-title{
+    background:rgb(240, 204, 162);
+}
+#icon .s-title{
+    background:rgb(215, 162, 240);
+}
+#skill .s-title{
+    background:rgb(240, 162, 162);
+}
 
 @media screen and (min-width:450px){
     
@@ -248,11 +269,10 @@ header{
     }
     .web-box{
         width:30%;
-        max-width:400px;
         
     }
     .banner-detail-container{
-        width:75%;
+        width:75%; 
     }
     .b-d-box{
         width:33.33%;
@@ -284,7 +304,7 @@ header{
         justify-content: flex-end;
         align-items: center;
         padding:0;
-        width:0;
+        /* width:0; */
         overflow:hidden;
     }
     .nav-list a{
