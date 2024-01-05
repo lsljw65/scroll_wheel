@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var $sctionTop=0;
+    var $sectionTop=0;
     var headerHeight;
     // /////////////// 초기값 설정 /////////////////
     function init(){
@@ -67,12 +67,38 @@ $(document).ready(function(){
         init();
     })
 
-    $(window).scroll(function(){
-        var $scrollTop=$(this).scrollTop()
-        
-
+    $(".section").each(function(index){
+        // console.log("index : "+index)
+        $(window).scroll(function(){
+            var $scrollTop=$(this).scrollTop()
+            console.log("스크롤 탑 : "+$scrollTop)
+            $sectionTop=$(".section").eq(index).offset().top
+            console.log("섹션 탑 : "+$sectionTop)
+            if($scrollTop+500>=$sectionTop){
+               console.log("큽니다.")
+               console.log("index : "+index)
+               $position=index;
+               $aniIndex=index;
+               console.log("$position : "+$position)
+               $active($position);
+               $animation($aniIndex)
+            }else{
+                $aniIndex=index-1;
+            }
+        })
     })
-    
+    var $aniIndex=0;
+    function $animation(){
+        $(".section").eq($aniIndex-1).find(".about-container").removeClass("aboutActive");
+        $(".section").eq($aniIndex).find(".about-container").addClass("aboutActive")
+
+        $(".section").eq($aniIndex-1).find(".web-box").removeClass("webActive");
+        $(".section").eq($aniIndex+1).find(".web-box").removeClass("webActive");
+        for(i=0; i<$(".section .web-box").length; i++){
+            $(".section").eq($aniIndex).find(".web-box").addClass("webActive");
+        }
+    }
+    $animation();
     
 })//jqeuery 끝
     

@@ -140,15 +140,24 @@ header{
     overflow:auto;
     position:relative;
     /* padding-bottom:150px; */
+    /* 보완 */
+    transform:translate(-50px, 0);
+    opacity:0;
+    transition:1s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+/* 추가 */
+.about-container.aboutActive{
+    opacity: 1;
+    transform:translate(0,0);
 
+}
 #web{
     /* background:#ccc; */
     background:url(../images/m-r1.jpg) no-repeat center fixed;
     background-size:cover;
    
 }
-
 .web-container{
     height:80%;
     overflow:auto;
@@ -166,7 +175,19 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    transform:translate(0, 50px)
+    transform:translate(0, 50px);
+    transition:0.8s;
+    opacity:0;
+}
+.web-box:nth-child(1){
+    transition-delay:0.2s;
+}
+.web-box:nth-child(2){
+    transition-delay:0.4s;
+}
+.web-box.webActive{
+    transform: translate(0,0);
+    opacity:1;
 }
 #banner-detail{
     /* background:#bbb; */
@@ -269,7 +290,7 @@ header{
     }
     .web-box{
         width:30%;
-        
+        max-width:400px;
     }
     .banner-detail-container{
         width:75%; 
