@@ -84,7 +84,6 @@ $(document).ready(function(){
         $(".nav-list").removeClass("nav-position")
     }
     
-
     $(window).resize(function(){
         init();
     })
@@ -104,6 +103,7 @@ $(document).ready(function(){
             //    console.log("$position : "+$position)
                $active($position);
                $animation($aniIndex)
+               
             }
         })
     })
@@ -170,8 +170,62 @@ $(document).ready(function(){
         for(i=0; i<$(".section .web-box").length; i++){
             $(".section").eq($aniIndex).find(".web-box").addClass("webActive");
         }
+        
+        if($aniIndex+1==5){
+            $circle();
+            $('.circle').circleProgress({
+                animation: false,
+            }); 
+            
+        }
     }
     $animation();
+    // 스킬
+    function $circle(){
+        
+        $('.photoshop.circle').circleProgress({
+        value: 1,
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+        
+        $('.ill.circle').circleProgress({
+        value: 1,
+        
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+    
+        $('.figma.circle').circleProgress({
+        value: 1,
+        
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+    
+        $('.html.circle').circleProgress({
+        value: 1,
+        
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+    
+        $('.css.circle').circleProgress({
+        value: 1,
+        
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+    
+        $('.javascript.circle').circleProgress({
+        value: 1,
+        
+        }).on('circle-animation-progress', function(event, progress) {
+        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+        });
+          
+    }
+    // $circle();
     
 })//jqeuery 끝
     

@@ -1,0 +1,79 @@
+@charset "utf-8";
+.skill-container{
+    width:90%;
+    height:60%;
+    border:1px solid black;
+    display:flex;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+.skill-box{
+  width:40%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:10px 0;
+}
+.circle {
+    width: 100%;
+    margin: 6px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    /* 추가 */
+    color:white;
+  }
+  
+  .circle canvas {
+    vertical-align: top;
+    width:70px !important;
+    height:70px !important;
+  }
+  
+  .circle strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1rem;
+    transform:translate(-50%,-50%)
+  }
+  
+  .circle strong i {
+    font-style: normal;
+    font-size: 0.6em;
+    font-weight: normal;
+  }
+  
+  .skill-box span {
+    display: block;
+    color: #aaa;
+    margin-top: 0;
+    font-size:0.9rem;
+    text-align:center;
+    /* 추가 */
+    color:white;
+  }
+
+  @media screen and (min-width:768px){
+    .skill-box{
+      width:30%;
+    }
+    /* 추가 */
+    .circle canvas {
+
+        width:150px !important;
+        height:150px !important;
+    }
+    .circle strong {
+        font-size: 1.5rem;
+      }
+      
+      .circle strong i {
+        font-size: 0.8em;
+      }
+  }
